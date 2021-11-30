@@ -42,6 +42,10 @@ The green cell highlights the efficiency of calling a DLL routine from VBA6/x32/
 
 The primary concern is the cell with an orange background, indicating that a single DLL call takes 2 microseconds under 2016/VBA7/x64 instead of 8 nanoseconds under VBA6/x32/Excel 2002.
 
+#### Running the tests
+
+The project repository contains all sources (VBA, C, shell scripts) and precompiled binaries for Windows 10 (x32 and x64). DLLs can be compiled by running scripts (MemtoolsClient\.sh and MemtoolsLib\.sh) located in Library/DllTools/Memtools from an appropriate MSYS/MinGW shell (MinGWx32 or MinGWx64). The *DllTools.xls* Excel workbook contains all VBA modules. If the entire repository is cloned, the Runner() sub in the *DllPerfRun* module should find and load compiled DLL modules necessary for executing the tests (the code expects DLLs at a given path relative to the workbook). In RubberDuck VBA Code Explorer, DllPerfRun is in the DllTools/Performance subfolder. Two variables at the top of DllPerfRun.Runner() (GaugeMax and DummyMax) control the number of repetitions; it is advisable to start with smaller values and then optimize them (the timed period should be on the order of 1 s for optimal accuracy).
+
 
 <!-- References -->
 
