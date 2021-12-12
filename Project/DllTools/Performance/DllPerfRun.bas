@@ -36,7 +36,7 @@ End Sub
 '@EntryPoint
 Private Sub Runner()
     Dim GaugeMax As Long
-    GaugeMax = 10 ^ 9
+    GaugeMax = 10 ^ 8
     Dim DummyMax As Long
     DummyMax = 10 ^ 7
     
@@ -164,4 +164,3 @@ Private Sub Runner()
         '''' ---------- Fnc3ArgsDLLVBA ---------- ''''
     End With
 End Sub
-
