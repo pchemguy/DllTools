@@ -1,4 +1,4 @@
-Attribute VB_Name = "ProcAddress"
+Attribute VB_Name = "ProcAddressDemo"
 '@Folder "DllTools.Drafts"
 Option Explicit
 
