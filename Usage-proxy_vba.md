@@ -6,6 +6,8 @@ parent: Usage examples
 permalink: /usage/proxy-vba
 ---
 
+In this example, a VBA function is called instead of a DLL. While this example is also contrived, the target function signature is more realistic. In addition to returning a value, it takes three arguments transferred by value and three - by reference. This example is a convenient playground, permitting one to observe what happens when the setup is defective (for example, if LongVal and LongRef are Variant, rather than Long). It is also instructive to compare and contrast the setup details used here and in the last example. Ordinarily, IndirectCall uses DLL and function names to determine the address of the entry point. It also caches this address in its private field. The *CacheProcPtr* method permits the direct insertion of an entry into this cache, making this example possible.
+
 #### DllCallDemoVBACall
 
 ```vb
@@ -86,3 +88,5 @@ Private Function In3Out3Ret1(ByVal ByteVal As Byte, ByVal LongVal As Long, ByVal
     StrRef = "StrRefNew"
 End Function
 ```
+
+This example is based on this blog [post](https://akihitoyamashiro.blogspot.com/2020/07/how-to-use-function-pointer-in-vba-2.html).
