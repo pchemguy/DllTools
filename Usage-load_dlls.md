@@ -70,17 +70,17 @@ The RubberDuck Addin, if available, can activate the predeclared class attribute
 `Private/Public DllManagerDemoSQLiteC as New DllManagerDemoSQLiteC`  
 In the former case, this command executed from the *immediate pane* prints the SQLite version number:  
 `?DllManagerDemoSQLiteC.Create("").Version`  
-This class can be instantiated from a standard module 
+This class can be instantiated from a standard module, for example: 
 
 ```vb
 Private Sub InitDBQC()
     Dim DllPath As String
     Dim DllNames As Variant
     #If Win64 Then
-        DllPath = ThisWorkbook.Path & "\Library\SQLiteCAdo\dll\x64"
+        DllPath = ThisWorkbook.Path & "\Library\DllTools\dll\x64"
         DllNames = "sqlite3.dll"
     #Else
-        DllPath = ThisWorkbook.Path & "\Library\SQLiteCAdo\dll\x32"
+        DllPath = ThisWorkbook.Path & "\Library\DllTools\dll\x32"
         DllNames = Array("icudt68.dll", "icuuc68.dll", "icuin68.dll", _
                          "icuio68.dll", "icutu68.dll", "sqlite3.dll")
     #End If
