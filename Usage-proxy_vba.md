@@ -55,14 +55,14 @@ Private Sub Main()
     
     Debug.Print vbNewLine & "----- VERIFYING RETURNED VALUES -----"
     With this
-        Debug.Print "ByteVal = " & CStr(.ByteVal) & vbTab & vbTab & IIf(.ByteVal = 10, "MATCHED/UNCHANGED", "MISMATCHED")
-        Debug.Print "ByteRef = " & CStr(.ByteRef) & vbTab & vbTab & IIf(.ByteRef = 200, "MATCHED/UPDATED", "MISMATCHED")
-        Debug.Print "LongVal = " & CStr(.LongVal) & vbTab & vbTab & IIf(.LongVal = 30, "MATCHED/UNCHANGED", "MISMATCHED")
-        Debug.Print "LongRef = " & CStr(.LongRef) & vbTab & vbTab & IIf(.LongRef = 400, "MATCHED/UPDATED", "MISMATCHED")
-        Debug.Print "StrVal  = " & CStr(.StrVal) & vbTab & IIf(.StrVal = "StrVal", "MATCHED/UNCHANGED", "MISMATCHED")
-        Debug.Print "StrRef  = " & CStr(.StrRef) & vbTab & IIf(.StrRef = "StrRefNew", "MATCHED/UPDATED", "MISMATCHED")
+        Debug.Print "ByteVal = " & CStr(.ByteVal) & vbTab & vbTab & IIf(.ByteVal = 10, "OK/UNCHANGED", "BAD")
+        Debug.Print "ByteRef = " & CStr(.ByteRef) & vbTab & vbTab & IIf(.ByteRef = 200, "OK/UPDATED", "BAD")
+        Debug.Print "LongVal = " & CStr(.LongVal) & vbTab & vbTab & IIf(.LongVal = 30, "OK/UNCHANGED", "BAD")
+        Debug.Print "LongRef = " & CStr(.LongRef) & vbTab & vbTab & IIf(.LongRef = 400, "OK/UPDATED", "BAD")
+        Debug.Print "StrVal  = " & CStr(.StrVal) & vbTab & IIf(.StrVal = "StrVal", "OK/UNCHANGED", "BAD")
+        Debug.Print "StrRef  = " & CStr(.StrRef) & vbTab & IIf(.StrRef = "StrRefNew", "OK/UPDATED", "BAD")
     End With
-    Debug.Print "Result  = " & CStr(Result) & vbTab & vbTab & IIf(Result = 70, "MATCHED", "MISMATCHED")
+    Debug.Print "Result  = " & CStr(Result) & vbTab & vbTab & IIf(Result = 70, "OK", "BAD")
     Debug.Print "-------------------- In3Out3Ret1 --------------------"
 End Sub
 
@@ -70,12 +70,12 @@ End Sub
 Private Function In3Out3Ret1(ByVal ByteVal As Byte, ByVal LongVal As Long, ByVal StrVal As String, _
                              ByRef ByteRef As Byte, ByRef LongRef As Long, ByRef StrRef As String) As Long
     Debug.Print "----- VERIFYING RECEIVED ARGUEMNTS -----"
-    Debug.Print "ByteVal = " & CStr(ByteVal) & vbTab & vbTab & IIf(ByteVal = 10, "MATCHED", "MISMATCHED")
-    Debug.Print "ByteRef = " & CStr(ByteRef) & vbTab & vbTab & IIf(ByteRef = 20, "MATCHED", "MISMATCHED")
-    Debug.Print "LongVal = " & CStr(LongVal) & vbTab & vbTab & IIf(LongVal = 30, "MATCHED", "MISMATCHED")
-    Debug.Print "LongRef = " & CStr(LongRef) & vbTab & vbTab & IIf(LongRef = 40, "MATCHED", "MISMATCHED")
-    Debug.Print "StrVal  = " & CStr(StrVal) & vbTab & IIf(StrVal = "StrVal", "MATCHED", "MISMATCHED")
-    Debug.Print "StrRef  = " & CStr(StrRef) & vbTab & IIf(StrRef = "StrRef", "MATCHED", "MISMATCHED")
+    Debug.Print "ByteVal = " & CStr(ByteVal) & vbTab & vbTab & IIf(ByteVal = 10, "OK", "BAD")
+    Debug.Print "ByteRef = " & CStr(ByteRef) & vbTab & vbTab & IIf(ByteRef = 20, "OK", "BAD")
+    Debug.Print "LongVal = " & CStr(LongVal) & vbTab & vbTab & IIf(LongVal = 30, "OK", "BAD")
+    Debug.Print "LongRef = " & CStr(LongRef) & vbTab & vbTab & IIf(LongRef = 40, "OK", "BAD")
+    Debug.Print "StrVal  = " & CStr(StrVal) & vbTab & IIf(StrVal = "StrVal", "OK", "BAD")
+    Debug.Print "StrRef  = " & CStr(StrRef) & vbTab & IIf(StrRef = "StrRef", "OK", "BAD")
     In3Out3Ret1 = LongVal + LongRef
     
     LongVal = 300
