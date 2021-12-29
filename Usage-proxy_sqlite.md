@@ -8,7 +8,7 @@ permalink: /usage/proxy-sqlite
 
 The following examples (see the DllTools.Demo.DllCall folder in the RD Code Explorer) demonstrate the use of the *IndirectCall* method, which wraps the *DispCallFunc* API and facilitates indirect DLL calls. The primary use case for this API is calling an x32 *CDECL* DLL routine, which is not available as an STDCALL/WINAPI version. A word of warning: the VBA compiler cannot perform any correctness checks on DLL calls placed via the DispCallFunc API. While IndirectCall partially automates the setup process where possible, any caller's mistake can easily crash the host application.
 
-This demo calls the same SQLite DLLs used in the previous example. These STDCALL binaries are accessible via the Declare statement, as illustrated previously. Here, we call the same routine and compare the setup process. (The only change necessary for a CDECL version of SQLite is changing the CC_STDCALL parameter below to CC_CDECL.)
+This example calls the same STDCALL SQLite DLLs accessible via the Declare statement, as illustrated previously. Its primary purpose is to compare the setup processes and results. (The only change necessary for a CDECL version of SQLite is changing the CC_STDCALL parameter below to CC_CDECL.) This code calls two SQLite functions, sqlite3_libversion_number, as before, and sqlite3_libversion. These functions take no arguments, so the setup is similar to the previous example, except that the Declare statement is gone, and the calls go through IndirectCall rather than directly.
 
 #### DllCallDemoSQLite
 
@@ -49,5 +49,3 @@ Private Sub Main()
     End If
 End Sub
 ```
-
-This demo code calls two SQLite functions, sqlite3_libversion_number and sqlite3_libversion. They take no arguments, so the setup is very similar to the previous example, except that the Declare statement is gone, and the calls go through IndirectCall rather than directly.
