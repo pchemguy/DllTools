@@ -1,16 +1,16 @@
 ---
 layout: default
-title: Load DLLs from user directory
+title: Load DLLs from user folder
 nav_order: 1
 parent: Usage examples
 permalink: /usage/load-dlls
 ---
 
-### Load custom-compiled SQLite DLLs from a user directory
+### Load custom-compiled SQLite DLLs from a user folder
 
 Below is a stripped-down version of the SQLiteC class from the SQLiteCAdo library responsible for loading an SQLite DLL with dependencies (DllManagerDemoSQLiteC class in the *DllTools.Manager.Demo* RD Code Explorer folder). This class, similar to DllManager, has the predeclared attribute set and employs the Factory/Constructor (Create/Init) pattern. For illustrative purposes, only one SQLite function declaration remains in the class. TObjectState private type declares a structure for holding private fields, including a reference to a DllManager instance. The caller should keep this reference while using the DLL, because DllManager's Class_Terminate calls the FreeLibrary API freeing the loaded library.
 
-The DllManager factory takes the default DLL path as the first required argument. It can be blank for target DLLs located in a preset location within the project folder optionally checked by DllManager. The second optional argument specifies the names of the DLLs to be loaded, and if not provided, the Init constructor uses the default value. Also, note that the SQLite build used by SQLiteCAdo includes several dependencies. In the case of the x32 version, Windows fails to load these dependencies automatically, so an array of DLL names explicitly specifies all DLLs for the x32 environment.
+The DllManager factory takes the default DLL path as the first required argument. It can be blank for target DLLs located in a preset location within the project folder optionally checked by DllManager. The second optional argument specifies the names of the DLLs to be loaded, and if not provided, the Init constructor uses the default values. Also, note that the SQLite build used by SQLiteCAdo includes several dependencies. In the case of the x32 version, Windows fails to load these dependencies automatically, so an array of DLL names explicitly specifies all DLLs for the x32 environment.
 
 #### DllManagerDemoSQLiteC.cls
 
@@ -66,10 +66,10 @@ Public Function Version() As Long
 End Function
 ```
 
-The RubberDuck Addin, if available, can activate the predeclared class attribute. Otherwise, an auto-assigned variable declared at module- or project-level and named after the class can act as a predeclared instance:
-`Private/Public DllManagerDemoSQLiteC as New DllManagerDemoSQLiteC`
-In the former case, this command executed from the *immediate pane* prints the SQLite version number:
-`?DllManagerDemoSQLiteC.Create("").Version`
+The RubberDuck Addin, if available, can activate the predeclared class attribute. Otherwise, an auto-assigned variable declared at module- or project-level and named after the class can act as a predeclared instance:  
+`Private/Public DllManagerDemoSQLiteC as New DllManagerDemoSQLiteC`  
+In the former case, this command executed from the *immediate pane* prints the SQLite version number:  
+`?DllManagerDemoSQLiteC.Create("").Version`  
 This class can be instantiated from a standard module 
 
 ```vb
