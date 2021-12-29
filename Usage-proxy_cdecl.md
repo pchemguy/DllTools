@@ -1,7 +1,7 @@
 ---
 layout: default
 title: Proxied call - CDECL function
-nav_order: 4
+nav_order: 5
 parent: Usage examples
 permalink: /usage/proxy-cdecl
 ---

@@ -1,9 +1,9 @@
 ---
 layout: default
-title: Load DLLs from user folder
-nav_order: 1
+title: Load DLLs from user folder. II
+nav_order: 2
 parent: Usage examples
-permalink: /usage/load-dlls
+permalink: /usage/load-dlls2
 ---
 
 ### Load custom-compiled SQLite DLLs from a user folder

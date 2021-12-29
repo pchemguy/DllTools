@@ -1,7 +1,7 @@
 ---
 layout: default
 title: Proxied call - SQLite
-nav_order: 2
+nav_order: 3
 parent: Usage examples
 permalink: /usage/proxy-sqlite
 ---
