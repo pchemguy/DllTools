@@ -15,7 +15,6 @@ The DllManager factory takes the default DLL path as the first required argument
 #### DllManagerDemoSQLiteC.cls
 
 ```vb
-'@Folder "DllTools.Manager.Demo"
 '@PredeclaredId
 Option Explicit
 

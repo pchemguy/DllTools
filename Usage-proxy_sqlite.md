@@ -13,7 +13,6 @@ This example calls the same STDCALL SQLite DLLs accessible via the Declare state
 #### DllCallDemoSQLite
 
 ```vb
-'@Folder "DllTools.Demo.DllCall"
 Option Explicit
 
 Private Const LIB_NAME As String = "DllTools"
