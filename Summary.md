@@ -5,7 +5,7 @@ nav_order: 1
 permalink: /summary
 ---
 
-DllTools project focuses on facilitating calling DLLs from VBA in cases when the *Declare* statement, commonly used for system API calls, may be insufficient. The DllManager class is the main component, which wraps several Windows APIs. It provides functionality particularly useful for calling:
+DllTools project focuses on facilitating VBA DLL calls when the *Declare* statement, commonly used for system API calls, may be insufficient. The DllManager class is the main component, which wraps several Windows APIs. It provides functionality particularly useful for calling:
 
   * DLLs located in non-standard locations, such as user folders, and
   * CDECL routines from VBA-x32 hosts, such as VBA6-x32.
