@@ -62,7 +62,7 @@ Public Function Version() As Long
 End Function
 ```
 
-The RubberDuck Addin, if available, can activate the predeclared class attribute. Otherwise, an auto-assigned variable declared at module- or project-level and named after the class can act as a predeclared instance:  
+The RubberDuck Addin, if available, can activate the predeclared class attribute. Otherwise, an auto-assigned module- or project-level variable named after the class can act as a predeclared instance:  
 `Private/Public DllManagerDemoSQLiteC as New DllManagerDemoSQLiteC`  
 In the former case, this command executed from the *immediate pane* prints the SQLite version number:  
 `?DllManagerDemoSQLiteC.Create("").Version`  
