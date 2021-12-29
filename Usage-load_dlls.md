@@ -17,10 +17,6 @@ The DllManager factory takes the default DLL path as the first required argument
 ```vb
 '@Folder "DllTools.Manager.Demo"
 '@PredeclaredId
-'@IgnoreModule
-''''
-'''' >>> ?DllManagerDemoSQLiteC.Create("").Version
-''''
 Option Explicit
 
 #If VBA7 Then
