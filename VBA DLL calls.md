@@ -1,7 +1,7 @@
 ---
 layout: default
 title: VBA to DLL call efficiency
-nav_order: 3
+nav_order: 5
 permalink: /vba-dll-call
 ---
 
