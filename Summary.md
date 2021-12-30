@@ -11,7 +11,7 @@ The DllManager class, the main component of DllTools, facilitates VBA calls to
   * CDECL routines from VBA-x32 hosts, and  
   * DLLs with multiple non-system dependencies.  
 
-#### Calling DLLs in non-standard locations
+#### DLLs with dependencies in non-standard locations
 
 While the Declare statement is sufficient for making VBA-compatible DLL calls, this statement must include an absolute path to the library for non-standard locations, making the declarations ugly and the code fragile. The alternative approach involves explicit loading of DLLs via the LoadLibrary Windows API. Furthermore, Windows may sometimes fail to load dependencies automatically, raising obscure errors. In such a case, DllMnager can take an ordered sequence of DLL names for loading in the provided order.
 
