@@ -10,6 +10,7 @@ Option Private Module
 Private Const MODULE_NAME As String = "GuardTests"
 Private TestCounter As Long
 
+#Const LateBind = 1     '''' RubberDuck Tests
 #If LateBind Then
     Private Assert As Object
 #Else
@@ -162,7 +163,7 @@ Act:
     Set selfVar = instanceVar.Self
 Assert:
     Assert.AreEqual TypeName(instanceVar), TypeName(selfVar), "Error: type mismatch: " & TypeName(selfVar) & " type."
-    Assert.AreSame instanceVar, selfVar, "Error: bad Self pointer"
+    Assert.IsTrue instanceVar Is selfVar, "Error: bad Self pointer"
 
 CleanExit:
     Exit Sub
@@ -184,7 +185,7 @@ Act:
     Set classVarReturned = classVar.Create("Dummy").Class
 Assert:
     Assert.AreEqual TypeName(classVar), TypeName(classVarReturned), "Error: type mismatch: " & TypeName(classVarReturned) & " type."
-    Assert.AreSame classVar, classVarReturned, "Error: bad Class pointer"
+    Assert.IsTrue classVar Is classVarReturned, "Error: bad Class pointer"
 
 CleanExit:
     Exit Sub

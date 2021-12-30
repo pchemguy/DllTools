@@ -11,6 +11,7 @@ Option Private Module
 Private Const MODULE_NAME As String = "CommonRoutinesTests"
 Private TestCounter As Long
 
+#Const LateBind = 1     '''' RubberDuck Tests
 #If LateBind Then
     Private Assert As Object
 #Else
@@ -127,8 +128,8 @@ Act:
     Dim Actual As Variant
     Actual = UnfoldParamArray(ArgumentOuter)
 Assert:
-    Assert.AreEqual 1024, Actual(1)(0), "Returned argument error"
-    Assert.AreEqual 2048, Actual(1)(1), "Returned argument error"
+    Assert.AreEqual 1024, CLng(Actual(1)(0)), "Returned argument error"
+    Assert.AreEqual 2048, CLng(Actual(1)(1)), "Returned argument error"
 
 CleanExit:
     Exit Sub
@@ -152,8 +153,8 @@ Act:
     Dim Actual As Variant
     Actual = UnfoldParamArray(ArgumentOuter)
 Assert:
-    Assert.AreEqual 1024, Actual(1)(0), "Returned argument error"
-    Assert.AreEqual 2048, Actual(1)(1), "Returned argument error"
+    Assert.AreEqual 1024, CLng(Actual(1)(0)), "Returned argument error"
+    Assert.AreEqual 2048, CLng(Actual(1)(1)), "Returned argument error"
 
 CleanExit:
     Exit Sub
@@ -200,8 +201,8 @@ Act:
     Dim Actual As Variant
     Actual = UnfoldParamArray(ArgumentOuter)
 Assert:
-    Assert.AreEqual 1024, Actual(0)(1), "Returned argument error"
-    Assert.AreEqual 2048, Actual(0)(2), "Returned argument error"
+    Assert.AreEqual 1024, CLng(Actual(0)(1)), "Returned argument error"
+    Assert.AreEqual 2048, CLng(Actual(0)(2)), "Returned argument error"
 
 CleanExit:
     Exit Sub
@@ -225,8 +226,8 @@ Act:
     Dim Actual As Variant
     Actual = UnfoldParamArray(ArgumentOuter)
 Assert:
-    Assert.AreEqual 1024, Actual(0)(0, 0), "Returned argument error"
-    Assert.AreEqual 2048, Actual(0)(0, 1), "Returned argument error"
+    Assert.AreEqual 1024, CLng(Actual(0)(0, 0)), "Returned argument error"
+    Assert.AreEqual 2048, CLng(Actual(0)(0, 1)), "Returned argument error"
 
 CleanExit:
     Exit Sub
@@ -432,3 +433,4 @@ CleanExit:
 TestFail:
     Assert.Fail "Error: " & Err.Number & " - " & Err.Description
 End Sub
+

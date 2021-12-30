@@ -6,8 +6,7 @@ Option Private Module
 Private Const LIB_NAME As String = "DllTools"
 Private Const PATH_SEP As String = "\"
 Private Const LIB_RPREFIX As String = _
-    "Library" & PATH_SEP & LIB_NAME & PATH_SEP & _
-    "Demo - DLL - STDCALL and Adapter" & PATH_SEP
+    "Library\" & LIB_NAME & "\Demo - DLL - STDCALL and Adapter\AddLib\"
 
 #If Win64 Then
 Private Declare PtrSafe Function demo_sqlite3_extension_adapter Lib "SQLite3demo" (ByVal Dummy As Long) As Long
@@ -46,9 +45,12 @@ End Sub
 
 Private Sub LoadDlls(ByVal DllPath As String)
     Dim DllMan As DllManager
+    '@Ignore FunctionReturnValueDiscarded
     DllManager.Free
     Dim DllName As String
     DllName = "sqlite3demo.dll"
     Set DllMan = DllManager.Create(DllPath, DllName)
     Set this.DllMan = DllMan
 End Sub
+
+

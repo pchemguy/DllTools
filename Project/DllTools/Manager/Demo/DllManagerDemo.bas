@@ -1,5 +1,5 @@
 Attribute VB_Name = "DllManagerDemo"
-'@Folder "DllTools.Manager"
+'@Folder "DllTools.Manager.Demo"
 '@IgnoreModule ProcedureNotUsed, IndexedDefaultMemberAccess, FunctionReturnValueDiscarded
 Option Explicit
 Option Private Module
@@ -33,10 +33,10 @@ Private Declare Function winsqlite3_libversion_number Lib "WinSQLite3" Alias "sq
 Private Declare Function sqlite3_libversion_number Lib "SQLite3" () As Long
 #End If
 
-Private Type TDllManagerDemo
+Private Type TModuleState
     DllMan As DllManager
 End Type
-Private this As TDllManagerDemo
+Private this As TModuleState
 
 
 Private Sub GetWinSQLite3VersionNumber()
