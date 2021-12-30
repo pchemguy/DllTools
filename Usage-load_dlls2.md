@@ -6,11 +6,11 @@ parent: Usage examples
 permalink: /usage/load-dlls2
 ---
 
-### Load custom-compiled SQLite DLLs from a user folder
+### Load custom-compiled SQLite DLLs from a user folder using a class module
 
-Below is a stripped-down version of the SQLiteC class from the SQLiteCAdo library responsible for loading an SQLite DLL with dependencies (DllManagerDemoSQLiteC class in the *DllTools.Manager.Demo* RD Code Explorer folder). This class, similar to DllManager, has the predeclared attribute set and employs the Factory/Constructor (Create/Init) pattern. For illustrative purposes, only one SQLite function declaration remains in the class. Private structure *TObjectState* encapsulates private instance fields (variable `this`), including a reference to a DllManager instance. The caller should keep this reference while using the DLL, because DllManager's Class_Terminate calls the FreeLibrary API freeing the loaded library.
+This example comes from a separate project, the [SQLiteCAdo VBA][] library, which uses DllManager for loading the SQLite DLL with dependencies. Below is a stripped-down version of the SQLiteC class, responsible for the setup/teardown processes (DllManagerDemoSQLiteC class in the *DllTools.Manager.Demo* RD Code Explorer folder). The setup is similar to the previous example, except that the calling code instantiates the DllManagerDemoSQLiteC class, which, in turn, instantiates DllManager.
 
-The DllManager factory takes the default DLL path as the first required argument. It can be blank for target DLLs located in a preset location within the project folder optionally checked by DllManager. The second optional argument specifies the names of the DLLs to be loaded, and if not provided, the Init constructor uses the default values. Also, note that the SQLite build used by SQLiteCAdo includes several dependencies. In the case of the x32 version, Windows fails to load these dependencies automatically, so an array of DLL names explicitly specifies all DLLs for the x32 environment.
+DllManagerDemoSQLiteC has the predeclared attribute set and employs the Factory/Constructor (Create/Init) pattern. For illustrative purposes, only one SQLite function declaration remains in the class. Private structure *TObjectState* encapsulates private instance fields (variable `this`), including a reference to a DllManager instance.
 
 #### DllManagerDemoSQLiteC.cls
 
@@ -91,3 +91,7 @@ Private Sub InitDBQC()
 ```
 
 *DllManagerDemo* from the same Code Explorer folder (*DllTools.Manager.Demo*) demonstrates a similar functionality executed from a standard module directly.
+
+
+<!-- References -->
+[SQLiteCAdo VBA]: https://pchemguy.github.io/SQLiteC-for-VBA/

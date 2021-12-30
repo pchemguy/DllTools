@@ -7,8 +7,9 @@ permalink: /summary
 
 The DllManager class, the main component of DllTools, facilitates VBA calls to
 
-  * DLLs in non-standard locations and
-  * CDECL routines from VBA-x32 hosts.
+  * DLLs in non-standard locations,  
+  * DLLs with multiple non-system dependencies located in several directories, and  
+  * CDECL routines from VBA-x32 hosts.  
 
 #### Calling DLLs in non-standard locations
 
