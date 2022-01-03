@@ -65,12 +65,12 @@ End Function
 
 Private Function zfxGetLibraryArray() As Variant
     #If Win64 Then
-        zfxGetLibraryArray = Array("sqlite3.dll", "libicudt68.dll", _
+        zfxGetLibraryArray = Array("sqlite3.dll", "libicudt" & DT_ICU_V & ".dll", _
                                    "libstdc++-6.dll", "libwinpthread-1.dll", _
-                                   "libicuuc68.dll", "libicuin68.dll")
+                                   "libicuuc" & DT_ICU_V & ".dll", "libicuin" & DT_ICU_V & ".dll")
     #Else
-        zfxGetLibraryArray = Array("icudt68.dll", "icuuc68.dll", "icuin68.dll", _
-                                   "icuio68.dll", "icutu68.dll", "sqlite3.dll")
+        zfxGetLibraryArray = Array("icudt" & DT_ICU_V & ".dll", "icuuc" & DT_ICU_V & ".dll", "icuin" & DT_ICU_V & ".dll", _
+                                   "icuio" & DT_ICU_V & ".dll", "icutu" & DT_ICU_V & ".dll", "sqlite3.dll")
     #End If
 End Function
 
@@ -239,7 +239,7 @@ Arrange:
     #If Win64 Then
         DllNames = "sqlite3.dll"
     #Else
-        DllNames = "icudt68.dll"
+        DllNames = "icudt" & DT_ICU_V & ".dll"
     #End If
 Act:
     Dim DllMan As DllManager
@@ -276,7 +276,7 @@ Arrange:
     #If Win64 Then
         DllNames = "sqlite3.dll"
     #Else
-        DllNames = "icudt68.dll"
+        DllNames = "icudt" & DT_ICU_V & ".dll"
     #End If
     Dim DllMan As DllManager
     Set DllMan = DllManager.Create(DllPath)
@@ -330,9 +330,9 @@ Arrange:
 Act:
     Dim ResultCode As DllLoadStatus
     #If Win64 Then
-        ResultCode = DllMan.LoadMultiple("sqlite3.dll", "libicudt68.dll", "libstdc++-6.dll", "libwinpthread-1.dll", "libicuuc68.dll", "libicuin68.dll")
+        ResultCode = DllMan.LoadMultiple("sqlite3.dll", "libicudt" & DT_ICU_V & ".dll", "libstdc++-6.dll", "libwinpthread-1.dll", "libicuuc" & DT_ICU_V & ".dll", "libicuin" & DT_ICU_V & ".dll")
     #Else
-        ResultCode = DllMan.LoadMultiple("icudt68.dll", "icuuc68.dll", "icuin68.dll", "icuio68.dll", "icutu68.dll", "sqlite3.dll")
+        ResultCode = DllMan.LoadMultiple("icudt" & DT_ICU_V & ".dll", "icuuc" & DT_ICU_V & ".dll", "icuin" & DT_ICU_V & ".dll", "icuio" & DT_ICU_V & ".dll", "icutu" & DT_ICU_V & ".dll", "sqlite3.dll")
     #End If
     
 Assert:
@@ -406,9 +406,9 @@ Private Sub ztcFreeMultiple_VerifiesFreeTwoParamArray()
 Arrange:
     Dim DllICUName As String
     #If Win64 Then
-        DllICUName = "libicudt68.dll"
+        DllICUName = "libicudt" & DT_ICU_V & ".dll"
     #Else
-        DllICUName = "icudt68.dll"
+        DllICUName = "icudt" & DT_ICU_V & ".dll"
     #End If
     Dim DllMan As DllManager
     Set DllMan = zfxGetDefaultManager
@@ -436,9 +436,9 @@ Private Sub ztcFreeMultiple_VerifiesFreeTwoArray()
 Arrange:
     Dim DllICUName As String
     #If Win64 Then
-        DllICUName = "libicudt68.dll"
+        DllICUName = "libicudt" & DT_ICU_V & ".dll"
     #Else
-        DllICUName = "icudt68.dll"
+        DllICUName = "icudt" & DT_ICU_V & ".dll"
     #End If
     Dim DllMan As DllManager
     Set DllMan = zfxGetDefaultManager
