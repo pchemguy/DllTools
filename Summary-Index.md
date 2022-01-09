@@ -2,7 +2,7 @@
 layout: default
 title: Summary of functionality
 nav_order: 1
-permalink: /summary
+permalink: /
 ---
 
 The DllManager class, the main component of DllTools, facilitates VBA calls to
